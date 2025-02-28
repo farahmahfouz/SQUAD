@@ -11,14 +11,16 @@ export class GamesService {
   private apiUrl = 'https://games-shop-api.glitch.me/api/v1/games';
   private http = inject(HttpClient);
 
-  getGamesList() {
+  get GamesList() {
     return this.http.get<{ data: { games: Game[] } }>(`${this.apiUrl}`)
-    .pipe(
-      map(response => response.data.games)
-    );
+      .pipe(
+        map(response => response.data.games)
+      );
   }
 
-  // getGamesDetails(id: string) {
-  //   return this.http.get(`${this.apiUrl}/${id}`);
-  // }
+  getGamesDetails(id: string) {
+    return this.http.get<{ data: { game: Game } }>(`${this.apiUrl}/${id}`).pipe(
+      map(response => response.data.game)
+    )
+  }
 }

@@ -17,7 +17,7 @@ export class GamesComponent implements OnInit{
   games = signal<Game[] | undefined>(undefined);
 
   ngOnInit() {
-    const subscription = this.gamesService.getGamesList().subscribe({
+    const subscription = this.gamesService.GamesList.subscribe({
       next: (game) => {
         this.games.set(game)
         console.log(game)
