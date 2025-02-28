@@ -1,0 +1,17 @@
+<app-card>
+    <figure>
+        <img [src]="game().imageCover" [alt]="game().title"  class="object-cover h-72 w-full"/>
+    </figure>
+    <div class="card-body text-white">
+        <h2 class="card-title">
+            {{game().title}}
+            <div class="badge badge-secondary">{{game().price}}</div>
+            <div class="badge badge-info">{{game().discount}}</div>
+        </h2>
+        <p class="text-white/80 text-sm truncate">{{game().description}}</p>
+        <div class="card-actions justify-end">
+            <div class="">{{game().platform}}</div>
+            <div class="badge badge-outline">{{game().publisher}}</div>
+        </div>
+    </div>
+</app-card>

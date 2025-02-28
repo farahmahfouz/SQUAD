@@ -1,1 +1,91 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btnn {
+    display: inline-block;
+    padding: 12px 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 14px;
+    color: #c3a8ff;
+    width: 11rem;
+    background-color: transparent;
+    position: relative;
+    transition: color 0.3s ease  -in-out;
+    clip-path: polygon(
+      0 0,
+      calc(100% - 20px) 0,
+      100% 20px,
+      100% 100%,
+      20px 100%,
+      0 calc(100% - 20px)
+    );
+}
+
+/* Create the border effect */
+.btnn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #8b5cf6;
+    z-index: -2;
+    clip-path: polygon(
+      0 0,
+      calc(100% - 20px) 0,
+      100% 20px,
+      100% 100%,
+      20px 100%,
+      0 calc(100% - 20px)
+    );
+}
+
+/* Create the inner background */
+.btnn::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background-color: transparent; 
+    z-index: -1;
+    transition: background-color 0.3s ease-in-out;
+    clip-path: polygon(
+      0 0,
+      calc(100% - 16px) 0,
+      100% 16px,
+      100% 100%,
+      16px 100%,
+      0 calc(100% - 16px)
+    );
+}
+
+
+.btnn:hover::after {
+    background-color: #8b5cf6;
+}
+
+.btnn:hover {
+    color: #fff;
+}
+
+/* body {
+  background: #1f2122;
+  height: 100vh;
+} */
+
+
+.mainColor {
+  color: #8b5cf6;
+}
+
+.secondaryColor {
+  color: #666;
+}
+

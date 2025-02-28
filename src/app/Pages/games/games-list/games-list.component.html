@@ -1,0 +1,5 @@
+<section class="flex flex-wrap justify-center gap-10 py-10">
+    @for(game of games(); track game._id) {
+    <app-game-card [game]="game"/>
+    }
+</section>

@@ -1,0 +1,7 @@
+<app-background>
+    @if(games()) {
+    <app-games-list [games]="games()!" />
+    } @else if (games()?.length === 0){
+    <p>Unfortunately, no games could be found.</p>
+    }
+</app-background>

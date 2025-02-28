@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap');
+
+.navbar a {
+    font-family: Rajdhani, sans-serif;
+    letter-spacing: 0.1em;
+}
+
+
+.nav-links a {
+    position: relative;
+    text-decoration: none;
+    padding-bottom: 5px;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #8b5cf6; 
+    transition: width 0.3s ease-in-out; 
+}
+
+.nav-links a:hover::after {
+    width: 100%; 
+}
+
+.nav-links .active-link::after {
+    width: 100%;
+}
