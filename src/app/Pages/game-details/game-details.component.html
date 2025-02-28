@@ -1,13 +1,15 @@
 <app-background class="text-white h-screen">
-    <section class="flex justify-evenly p-10">
+    <section class="flex justify-evenly p-10 items-center">       
         <img [src]="game()?.imageCover" [alt]="game()?.imageCover" class="w-[500px] h-[600px] object-cover">
-        <div>
+        <div class="">
             <p class="text-white/95 text-5xl font-bold">{{game()?.title}}</p>
-            <div class="flex gap-2 py-4 text-3xl">
+            <div class="flex gap-2 py-4 text-3xl ">
+                @if((game()?.discount ?? 0)> 0) {
                 <p class="font-bold line-through text-white/70">{{game()?.discount}}</p>
+                }
                 <p class="font-bold">${{game()?.price}}</p>
             </div>
-            <p class="py-3 text-white/70 font-description">{{game()?.description}}</p>
+            <p class="py-3 text-white/70 font-description w-3/4">{{game()?.description}}</p>
             <div class=" py-14">
                 <button appButton class="mr-4">+-</button>
                 <button appButton>Add To Cart</button>
