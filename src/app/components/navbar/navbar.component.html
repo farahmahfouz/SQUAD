@@ -1,16 +1,13 @@
-<nav class="navbar  flex justify-between">
-    <!-- Logo on the left -->
+<nav class="navbar flex justify-between">
     <div class="">
         <a class="text-2xl font-bold mainColor">SQUAD</a>
     </div>
 
-    <!-- Navigation in the center -->
     <ul class="flex gap-4 secondaryColor text-xl nav-links">
-        <li><a routerLink='/' routerLinkActive="active-link">Home</a></li>
-        <li><a routerLink='/games' routerLinkActive="active-link">Games</a></li>
+        <li><a routerLink='/' routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
+        <li><a routerLink='/games' routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Games</a></li>
     </ul>
 
-    <!-- Profile image on the right -->
     <div class="dropdown dropdown-end">
         <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
           <div class="w-10 rounded-full">

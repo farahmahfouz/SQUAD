@@ -1,5 +1,8 @@
 <app-card (click)="handleRedirect(game()._id)" class="cursor-pointer">
-    <figure>
+    <figure class="relative">
+        @if (game().discount > 0){
+        <div class="sale-badge"> <span>SALE</span></div>
+        }
         <img [src]="game().imageCover" [alt]="game().title" class="object-cover h-72 w-full" />
     </figure>
     <div class="card-body p-3 text-white">
@@ -14,7 +17,6 @@
         </h2>
         <div class="card-actions justify-end">
             <p class="text-violet-500">{{game().platform}}</p>
-            <!-- <p class="">{{game().publisher}}</p> -->
         </div>
     </div>
 </app-card>
